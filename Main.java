@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -14,16 +15,21 @@ public class Main {
             System.out.println("2. if you are a client. ");
             System.out.println("3. Exit.");
 
-            type = sc.nextInt();
-            if (type == 1) {
-                AdminView adminView = new AdminView(system);
-                adminView.start();
-            } else if (type == 2) {
-                ClientView clientView = new ClientView(system);
-                clientView.start();
+            try{
+                type = sc.nextInt();
+                if (type == 1) {
+                    AdminView adminView = new AdminView(system);
+                    adminView.start();
+                } else if (type == 2) {
+                    ClientView clientView = new ClientView(system);
+                    clientView.start();
+                } else if (type == 3) {
+                    return;
+                }
             }
-            else if(type == 3) {
-                return;
+            catch (InputMismatchException e){
+                System.out.println("Invalid input. Please enter a number.");
+                sc.next();
             }
         } while (true);
 
