@@ -28,5 +28,24 @@ public class ReservationSystem {
         else{
             System.out.println("Sorry, that reservable does not exist, please try again.");
         }
+
+
+
     }
+    public void addReservable(Reservable reservable){
+        if(this.reservables.contains(reservable)){
+            System.out.println("This reservable is already registered on the system");
+        }
+
+        else{
+            this.reservables.add(reservable);
+        }
+    }
+
+    public void cancelReservation(Reservation reservation){
+        this.reservations.remove(reservation);
+    }
+
+    
+
 }
