@@ -46,6 +46,26 @@ public class ReservationSystem {
         this.reservations.remove(reservation);
     }
 
+    public void showReservations(){
+        for(Reservation r: this.reservations){
+            r.displayInfo();
+        }
+    }
 
+    public void shorReservables(){
+        for(Reservable r: this.reservables){
+            r.displayInfo();
+        }
+    }
+
+    public Reservable findReservable(String name){
+        for(Reservable r: this.reservables){
+            if(r.getName().equals(name)){
+                return r;
+            }
+
+        }
+        return null;
+    }
 
 }

@@ -1,27 +1,19 @@
 public class MeetingRoom extends Reservable{
     private boolean hasTV;
-    private boolean hasWhiteboard;
 
     public boolean isHasTV() {
         return hasTV;
     }
 
-    public void setHasTV(boolean hasTV) {
-        this.hasTV = hasTV;
-    }
 
-    public boolean isHasWhiteboard() {
-        return hasWhiteboard;
-    }
 
-    public void setHasWhiteboard(boolean hasWhiteboard) {
-        this.hasWhiteboard = hasWhiteboard;
-    }
 
-    public MeetingRoom(String name, boolean hasTV, boolean hasWhiteboard) {
+
+
+    public MeetingRoom(String name, boolean hasTV) {
         super(name);
         this.hasTV = hasTV;
-        this.hasWhiteboard = hasWhiteboard;
+
     }
 
     @Override
@@ -33,11 +25,6 @@ public class MeetingRoom extends Reservable{
             System.out.println("It doesn`t has TV included");
         }
 
-        if (this.hasWhiteboard){
-            System.out.println("It has whiteboard included");
-        }else{
-            System.out.println("It doesn`t has whiteboard included");
-        }
     }
 
 }
