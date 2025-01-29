@@ -8,6 +8,7 @@ public class ReservationSystem {
 
     public ReservationSystem() {
         this.reservations = new ArrayList<>();
+        this.reservables = new ArrayList<>();
     }
 
     public void addReserve(Reservable reservable, LocalDate date){
@@ -47,12 +48,19 @@ public class ReservationSystem {
     }
 
     public void showReservations(){
+
+        if(this.reservations.isEmpty()){
+            System.out.println("No reservations.");
+        }
         for(Reservation r: this.reservations){
             r.displayInfo();
         }
     }
 
     public void shorReservables(){
+        if(this.reservables.isEmpty()){
+            System.out.println("No reservables.");
+        }
         for(Reservable r: this.reservables){
             r.displayInfo();
         }
