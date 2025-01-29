@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -45,12 +46,22 @@ public class ClientView extends View {
                             System.out.println("Sorry, that reservable does not exist.");
                             break;
                         } else {
-                            System.out.println("Introduce the date for making the reservation (YYY-MM-DD): ");
+                            System.out.println("Introduce the date for making the reservation (YYYY-MM-DD): ");
 
-                            LocalDate date = LocalDate.parse(sc.nextLine());
+                            LocalDate date = null;
 
-                            this.system.addReserve(r, date);
-                            this.reservations.add(new Reservation(r, date));
+
+                            while (date == null) {
+                                try {
+                                    date = LocalDate.parse(sc.nextLine());
+
+                                    this.system.addReserve(r, date);
+                                    this.reservations.add(new Reservation(r, date));
+
+                                } catch (DateTimeParseException e) {
+                                    System.out.println("Invalid date format. Please enter the date in the format YYYY-MM-DD.");
+                                }
+                            }
                         }
                         break;
                     case 4:

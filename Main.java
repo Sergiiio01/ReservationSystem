@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) {
         ReservationSystem system = new ReservationSystem();
         Scanner sc = new Scanner(System.in);
+        AdminView adminView = new AdminView(system);
+        ClientView clientView = new ClientView(system);
         do {
 
 
@@ -18,10 +20,10 @@ public class Main {
             try{
                 type = sc.nextInt();
                 if (type == 1) {
-                    AdminView adminView = new AdminView(system);
+
                     adminView.start();
                 } else if (type == 2) {
-                    ClientView clientView = new ClientView(system);
+
                     clientView.start();
                 } else if (type == 3) {
                     return;
