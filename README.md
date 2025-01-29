@@ -32,3 +32,6 @@ This repository contains an application that implements reservation system
 
 ## Development
 This project is yet on development, as is still needed to include exceptions and controling errors.
+
+## Deploy
+For starting the program, it will just be neccesary to execute the file Main.java, after that the starting menu will be shown.
