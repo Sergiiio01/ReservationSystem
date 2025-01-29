@@ -1,12 +1,12 @@
-public class Reservable {protected String id;
+import java.util.UUID;
+
+public abstract class Reservable {
+    protected UUID id;
     protected String name;
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
+    public UUID getId() {
+        return id;
     }
 
     public String getName() {
@@ -21,9 +21,10 @@ public class Reservable {protected String id;
         System.out.println("Reservable name: " + this.name);
     }
 
-    public Reservable(String id, String name) {
-        this.id = id;
+    public Reservable(String name) {
+        this.id = UUID.randomUUID();;
         this.name = name;
     }
+
 
 }

@@ -10,8 +10,8 @@ public class RestaurantTable extends Reservable{
         this.places = places;
     }
 
-    public RestaurantTable(String id, String name, int places) {
-        super(id, name);
+    public RestaurantTable(String name, int places) {
+        super(name);
         this.places = places;
     }
 

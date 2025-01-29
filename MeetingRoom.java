@@ -18,8 +18,8 @@ public class MeetingRoom extends Reservable{
         this.hasWhiteboard = hasWhiteboard;
     }
 
-    public MeetingRoom(String id, String name, boolean hasTV, boolean hasWhiteboard) {
-        super(id, name);
+    public MeetingRoom(String name, boolean hasTV, boolean hasWhiteboard) {
+        super(name);
         this.hasTV = hasTV;
         this.hasWhiteboard = hasWhiteboard;
     }
@@ -39,4 +39,5 @@ public class MeetingRoom extends Reservable{
             System.out.println("It doesn`t has whiteboard included");
         }
     }
+
 }
